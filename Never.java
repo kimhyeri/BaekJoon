@@ -11,12 +11,14 @@ public class Never {
 		
 		Scanner input = new Scanner(System.in);
 		
-		int b = input.nextInt();
+		int count = input.nextInt();
 		
-		for (int z = 0 ; z < b ; z ++ ) {
+		for (int z = 0 ; z < count ; z ++ ) {
 			int a = input.nextInt();
 			
+			// 한자리일 때는 10개로 고정 
 			if (a == 1) {
+				
 				System.out.println(10);
 
 			} else {
@@ -27,15 +29,15 @@ public class Never {
 							tempArray[j] = array[j] + 1; 
 						} else {
 							tempArray[j] = tempArray[j-1] + array[j];
-							if(j == 9 && i == a -1) {
-								System.out.println(tempArray[9]);
-								break;
-							}
+					
 							if(j == 9) {
+								if (i == a - 1) { 
+									System.out.println(tempArray[9]);
+									break;
+								}
 								array = tempArray;
 								tempArray = new long[10];
 							}
-							
 						}
 					}
 				}
