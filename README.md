@@ -2,10 +2,19 @@
 algorithm study
 
 ## Goal
-Solving algorithm problems with Swift and Java  
+Solving algorithm problems with Swift and Java 👾
 
-### Language
+### Tool and Language
+> Xcode, Eclipse  
 > Swift, Java
 
-### Tool
-> Xcode, Eclipse
+#### Step
+* Stack
+* Queue
+* Deck
+* Tree
+* Graph
+* Binary Tree
+* Dynamic Programming
+* Greedy algorithm
+* Back Tracking
