@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Alphabat {
 	
-	static int R,C,count,tempcount;
+	static int R,C,count;
 	static int[] dx = {0,0,-1,1};
 	static int[] dy = {1,-1,0,0};
 	static char [][] array ;
@@ -15,7 +15,6 @@ public class Alphabat {
 		R = input.nextInt();
 		C = input.nextInt();
 		count = 1;
-		tempcount = 1;
 		array = new char [R][C];
 		visited= new boolean[R][C]; 
 		temp = new StringBuilder();
