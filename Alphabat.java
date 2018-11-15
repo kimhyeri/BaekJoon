@@ -14,7 +14,6 @@ public class Alphabat {
 		
 		R = input.nextInt();
 		C = input.nextInt();
-		count = 1;
 		array = new char [R][C];
 		visited= new boolean[R][C]; 
 		temp = new StringBuilder();
@@ -41,7 +40,7 @@ public class Alphabat {
 			int myY = y + dy[i];				
 			if (myX >= 0 && myY >= 0 && myX < R && myY < C ){
 				char check = array[myX][myY];
-				if (!temp.toString().contains(String.valueOf(check)) && !visited[myX][myY]){
+				if (temp.indexOf(String.valueOf(check)) == -1 && !visited[myX][myY]){
 					temp.append(check);
 					visited[myX][myY] = true;
 					count = Math.max(count, check(myX,myY));
