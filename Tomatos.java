@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Tomatos {
@@ -56,14 +54,8 @@ public class Tomatos {
 	}
 
 	static void bfs(XYPoint point) {
-
-		Queue<XYPoint> queue = new LinkedList<XYPoint>();
-		queue.add(point);
 		visited[point.x][point.y] = true;
-
-
-		XYPoint my = queue.poll();
-
+		XYPoint my = point;
 		for (int i = 0 ; i < 4 ; i ++ ){
 			myX = my.x + dx[i];
 			myY = my.y + dy[i];
