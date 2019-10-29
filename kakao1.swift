@@ -38,3 +38,45 @@ func solution(_ record:[String]) -> [String] {
     }
     return ret.reversed()
 }
+
+func solution(_ record: [String]) -> [String]{
+    var answer = [String]()
+    var temp = [String]()
+    var dictionary = [String: String]()
+    
+    for i in record {
+        let chatting = i.split(separator: " ")
+        if let firstMessage = chatting.first {
+            let message = String(firstMessage)
+            switch message {
+            case "Enter":
+                temp.append("Enter \(String(chatting[1]))")
+                dictionary.updateValue(String(chatting.last!),
+                                       forKey: String(chatting[1]))
+            case "Leave":
+                temp.append("Leave \(String(chatting.last!))")
+            case "Change":
+                dictionary.updateValue(String(chatting.last!),
+                                       forKey: String(chatting[1]))
+            default: break
+            }
+        }
+    }
+    
+    for i in temp {
+        let chatting = i.split(separator: " ")
+        if let firstMessage = chatting.first, 
+            let nickName = dictionary[String(chatting.last!)] {
+                let message = String(firstMessage)
+                switch message {
+                case "Enter":
+                    answer.append("\(nickName)님이 들어왔습니다.")
+                case "Leave":
+                    answer.append("\(nickName)님이 나갔습니다.")
+                default: break
+            }
+        }
+    }
+    
+    return answer
+}
