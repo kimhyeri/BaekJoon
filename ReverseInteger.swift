@@ -9,7 +9,8 @@
 import Foundation
 
 func reverse(_ x: Int) -> Int {    
-    var value = String(String(x).reversed())
+    let stringValue = String(x)
+    var value = String(stringValue.reversed())
     
     if stringValue.hasPrefix("-") {
         value.removeLast()
